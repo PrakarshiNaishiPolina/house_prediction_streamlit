@@ -44,13 +44,13 @@ with col1:
 
 with col2:
     population = st.number_input("Population in the Area", min_value=100.0, max_value=50000.0, value=3000.0)
-    avg_occupancy = st.number_input("Average Occupancy per Household", min_value=0.5, max_value=10.0, value=3.0)  # ✅ FIXED: Added missing feature
+    avg_occupancy = st.number_input("Average Occupancy per Household", min_value=0.5, max_value=10.0, value=3.0) 
     latitude = st.number_input("Latitude", min_value=32.0, max_value=42.0, value=37.0)
     longitude = st.number_input("Longitude", min_value=-125.0, max_value=-114.0, value=-119.0)
 
 # Predict House Price
 if st.button("Predict House Price"):
-    user_input = np.array([[med_inc, house_age, avg_rooms, avg_bedrooms, population, avg_occupancy, latitude, longitude]])  # ✅ FIXED
+    user_input = np.array([[med_inc, house_age, avg_rooms, avg_bedrooms, population, avg_occupancy, latitude, longitude]])  
 
     predicted_price = model.predict(user_input)[0]
     
